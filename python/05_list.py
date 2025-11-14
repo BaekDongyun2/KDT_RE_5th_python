@@ -91,10 +91,10 @@ datax = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 data1 = datax[0:3] # datax[0:3:-1]도 가능
 data2 = datax[3:6] # datax[3:6:-1]도 가능
 data3 = datax[6:8] # datax[6:8:-1]도 가능
-print(data1[::-1], data2[::-1], data3[::-1])
+print(data1[::-1], data2[::-1], data3[::-1]) # print(data1[:], data2[:], data3[:]) <-- datax[x:y:-1]로 바꿨을 때
 
 
-# del: 파이썬의 내장 키워드로, 개게를 삭제(delete)하는데 사용됨
+# del: 파이썬의 내장 키워드로, 개게?를 삭제(delete)하는데 사용됨
 # 인덱싱, 슬라이싱 주의사항
 my_list = [1, 2, 3, 4]
 my_list[5] # IndexError: list index out of range
@@ -181,7 +181,6 @@ print(numbers)
 b = numbers.pop()
 print("6. pop() 삭제한 요소", b)
 print(numbers)
-'''
 
 # 정렬
 numbers1 = [3, 2, 1, 4]
@@ -194,3 +193,40 @@ numbers2 =[50, 52, 53, 51]
 new_numbers = sorted(numbers2)
 new_numbers_desc = sorted(numbers2, reverse = True)
 print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc)
+
+# 뒤집기
+my_numbers = [100, 101, 104, 103, 102]
+my_numbers.reverse()
+print("8-1. reverse()", my_numbers) # [102, 103, 104, 101, 100]
+
+my_numbers2 = list(reversed(my_numbers))
+# my_numbers = reversed(my_numbers) --> <list_reverseiterator object at 0x000001BF00CF7370>
+print("8-2. reversed()", my_numbers2, my_numbers)
+
+# count(x): 값의 개수 세기
+# max(), min(): 최대/ 최소값 찾기
+# sum(): 요소들의 합 구하기
+
+# count, min, max, sum
+numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+print("9. count()", numbers.count(2))
+print("10. min/max()", min(numbers), max(numbers))
+print("11. sum", sum(numbers))
+'''
+
+passengers = ["철수", "영희"]
+passengers.extend(["민수", "지훈"]) 
+del passengers[1]
+passengers.insert(0, "수진")
+del passengers[2]
+now_passengers = list(reversed(passengers))
+print("현재 승객들의 좌석 순서", now_passengers)
+
+card_game_list = [5, 3, 7]
+card_game_list.extend([4, 9])
+print("mininum", min(card_game_list), "maximum", max(card_game_list))
+print(sum(card_game_list))
+card_game_list.sort()
+del card_game_list[4]
+print("최종 리스트", card_game_list)
+
