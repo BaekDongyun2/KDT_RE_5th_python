@@ -1,3 +1,4 @@
+'''
 # 자료형(Data type)
 ## 변수에 저장되는 데이터의 종류와 구조를 정의하는 것
 
@@ -56,12 +57,12 @@ print(int(False)) # 0
 # print(int("abc"))
 
 # 2. 실수로 변환: float()
-'''
+
 1) 정수 -> 실수
 2) 문자열로 표현된 실수 -> 실수
 3) 문자열로 표현된 정수 -> 실수
 4) 논리형 -> 실수
-'''
+
 # 가능한 경우
 print(float(7))
 print(float('3.14'))
@@ -83,19 +84,21 @@ print(10 + 5.0) # 15.0
 #-----------------------------------------
 # 문자열 포맷팅 (f-string)
 # 문자열 안에 변수를 쓸 수 있도록 해주는 기능
-'''
+
 name = "Dongyun"
 age = 26
 
 print("내 이름은", name, "이고, 나이는", age, "입니다.")
 print(f"내 이름은 {name}이고, 나이는 {age}입니다.")
-'''
+
 
 movie, director, year, genre = "Now You See Me: Now You Don't", "Ruben Fleischer", 2025, "Crime/Thriller"
 print(f"Title: {movie} Director: {director} Year: {year} Genre: {genre}")
+'''
 
 name, age, MBTI = "Dongyun", 26, "INTP"
 print(f"안녕하세요.\n제 이름은 {name}이고,\n{age}살 입니다.\n제 MBTI는 {MBTI}에요.")
+
 '''
 print(f"""안녕하세요.
       제 이름은 {name}이고,

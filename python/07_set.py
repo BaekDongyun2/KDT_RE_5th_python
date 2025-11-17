@@ -136,3 +136,4 @@ my_certificates= {'SQL', 'Python', 'Linux'}
 job_required= {'SQL', 'Python'}
 set4 = my_certificates & job_required
 print("지원 자격 충족 여부: ", my_certificates.issuperset(job_required))
+

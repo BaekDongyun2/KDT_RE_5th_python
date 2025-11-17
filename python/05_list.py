@@ -213,7 +213,7 @@ print("9. count()", numbers.count(2))
 print("10. min/max()", min(numbers), max(numbers))
 print("11. sum", sum(numbers))
 '''
-
+'''
 passengers = ["철수", "영희"]
 passengers.extend(["민수", "지훈"]) 
 del passengers[1]
@@ -230,3 +230,4 @@ card_game_list.sort()
 del card_game_list[4]
 print("최종 리스트", card_game_list)
 
+'''
