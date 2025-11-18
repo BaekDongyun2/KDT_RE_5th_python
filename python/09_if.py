@@ -106,29 +106,40 @@ else:
 '''
 
 # 실습
-
-money = int(input("금액 내라"))
-item = dict{"김밥":2500, "삼각김밥" : 1500, "도시락" : 4000}
-
+money = int(input("금액 내라 :"))
+item = dict(김밥=2500, 삼각김밥=1500, 도시락=4000)
 items = input(
            '''뭐 살건데?
-              김밥        2500원
-              삼각김밥     1500원
-              도시락       4000원
-              입력해: '''). split(", ")
+    김밥        2500원
+    삼각김밥     1500원
+    도시락       4000원
+    입력해: '''). split(", ")
 
+# 상품의 총합 변수인 total_price 지정
 total_price = 0
+change = 0
 
+# 김밥, 삼각김밥, 도시락 중 하나 혹은 둘 또는 셋의 상품을 고르거나 중복하여 고를경우를 고려한 조건문
+# 또한 상품을 고를때 김밥-삼각김밥-도시락 순이 아니더라도 입력이 가능케 함.
+# total_price += item["상품이름"]* items.counts("상품이름")
+# if문에서 상품이름이 items에 있을때 중복의 경우를 위해 items.count()를 사용
+# 복합 연산자를 이용하여 total_price에 계산될 값을 누적시킴. 이는 if "김밥" - if "삼각김밥" - if "도시락"의 블록순으로 가도 total_price의 값이 누적되도록 한 것.
 if "김밥" in items:
-    total_price = total_price + item("김밥")
+    total_price += item["김밥"] * items.count("김밥")
+
 if "삼각김밥" in items:
-    total_price = total_price + item("삼각김밥")
+    total_price += item["삼각김밥"] * items.count("삼각김밥")
+
 if "도시락" in items:
-    total_price = total_price + item("도시락")
+    total_price += item["도시락"] * items.count("도시락")
+
+change = money - total_price
+
+print("구매목록: ", items)
 
 print(f"총 금액은 {total_price}원 입니다.")
 
 if (money >= total_price):
-    print("구매 성공했습니다~")
+    print(f"구매 성공했습니다~\n거스름돈은 {change}원 입니다!")
 else:
-    print("금액이 부족합니다.")'''
+    print("금액이 부족합니다.")
