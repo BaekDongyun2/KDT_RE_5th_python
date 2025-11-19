@@ -222,10 +222,8 @@ for num1 in range(1, 10):
         print(f"{num1} X {num2} = {multiplier}")
 '''
 
-'''
-시발 멘탈잡자
-'''
 
+'''
 # 실습 3-2(왼쪽 정렬)
 
 n = int(input("몇 줄 만들거냐? : "))
@@ -263,3 +261,63 @@ for i in range(1, n+1):
     for k in range(i):
         line += '*'
     print(line)
+'''
+
+# for i in range(2, 10):
+#     print(f"[ {i}단 ]")
+#     for j in range(1, 10):
+#         num = i * j
+#         print(f"{i} X {j} = {num}")
+
+#n = int(input("몇 줄로 만들거냐: "))
+
+# for i in range(1, n+1): # 별 피라미드의 높이 설정 반복문
+#     line = "" # 매 줄마다 초기화
+#     for j in range(n-i): # 왼쪽 공백
+#         line += " "
+#     for k in range(2 * i - 1): # 별
+#         line += "*"
+#     print(line)
+
+# for i in range(1, n+1):
+#     line = ''
+#     for j in range(n-i):
+#         line += ' '
+#     for k in range(i):
+#         line += '*'
+#     print(line)
+
+
+# 리스트 컴프리헨션(list comprehension)
+# - for문을 리스트에 한줄로 축약하여 새 리스트를 생성하는 문법
+# - [표현식(리스트의 원소) for 변수 in 반복대상 if 조건]
+# - 표현식: 값을 유도하는 식(표현)
+
+
+# # for문 이용
+# squares = []
+# for x in range(1, 6):
+#     squares.append(x**2)
+# print(squares)
+
+# # 리스트 컴프리헨션
+# squares2 = [x**2 for x in range(1, 6)]
+# print(squares2)
+
+# # 조건문 추가하기
+# square3 = [x**2 for x in range(1, 11) if x % 2 ==0]
+# print(square3)
+
+# 실습 4-1
+power2 = [x**2 for x in range(1, 11)]
+print(power2)
+
+# 실습 4-2
+multi3 = [y for y in range(1, 51) if y % 3 == 0]
+print(multi3)
+
+# 실습 4-3
+fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+
+longg = [fruit for fruit in fruits if len(fruit) >= 5]
+print(longg)
