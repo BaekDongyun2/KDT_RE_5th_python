@@ -89,7 +89,7 @@ set3 = user1 | user2
 print("공통 관심 장르: ", set1)
 print("서로 다른 장르: ", set2)
 print("전체 장르: ", set3)
-    
+   
 # set 메서드
 s1 = {1, 2, 3}
 

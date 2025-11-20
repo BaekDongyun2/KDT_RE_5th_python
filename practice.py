@@ -1,14 +1,48 @@
-'''
-print("가", "나", "다", sep = "V")
+while True: # 무한루프
+    ID = "ASDF"
+    PW = "1234"
 
-print("안녕하세요" \
-"반갑습니다.", end = "")
+    print("======로그인 화면======")
+    print("1. 로그인")
+    print("2. 종료")
 
-# 입력한 정수의 각 자릿수를 역순으로 출력 해보자.
+    num = input("선택 : ")
 
-num = input() # 문자열로 입력을 받는다.
+    if num == "2":
+        print("종료합니다.")
+        break
+    
+    elif num == "1":
+        ID = input("ID : ")
+        PW = input("PW : ")
 
-# 역순으로 출력
-# for 구문 없이 구현
-print(num[4], num[3], num[2], num[1], num[0])
+        while ((ID != "ASDF") or (PW != "1234")):
 
+            print("로그인 실패. 돌아가.")
+            ID = input("ID : ")
+            PW = input("PW : ")
+        
+        while ((ID == "ASDF") or (PW == "1234")):
+
+            print("로그인 성공!")
+            print("======메뉴======")
+            print("1. 정보 보기")
+            print("2. 설정")
+            print("3. 로그아웃")
+
+            n = input("메뉴 선택 : ")
+
+            if n == "1":
+                print("회원님의 정보입니다.")
+            
+            elif n == "2":
+                print("설정 메뉴입니다.")
+
+            elif n == "3":
+                print("로그아웃합니다.")
+                break
+            else:
+                print("다시 입력하세요.")
+            continue
+    else:
+        print("다시 입력하세요.")

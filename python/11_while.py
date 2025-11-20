@@ -272,20 +272,3 @@ while True:
     else:
         print("다시 입력하세요.")
 
-
-
-# while ID != "Dongyun2":
-
-#     print("ㅠㅠ틀렸어요. 다시 입력하세요.")
-#     ID = input("고갱님의 ID를 입력하세요. : ")
-
-#     while ID == "Dongyun2":
-        
-#         PW = input("고갱님의 PW를 입력하세요. : ")
-        
-#         while PW != "yeahyeah":
-#              print("ㅠㅠ틀렸어요. 다시 입력하세요.")
-#              PW = input("고갱님의 PW를 입력하세요. : ")
-    
-#         print("로그인 성공~")
-#         break
