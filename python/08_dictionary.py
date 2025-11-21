@@ -11,11 +11,9 @@
 + 명확한 구조: 각 항목이 어떤의미를 가지는지 명확함(key로 의미부여 가능)
 + 확장성과 유연성: JSON과의 호환성이 뛰어나고, 다양한 자료구조 표현 가능
 # dict 만들기
-'''
 d1 = {} # 빈 dict 만들기
 print(d1, type(d1))
 
-'''
 person = {"name": "백동윤", "age": 26}
 print(person)
 
@@ -51,6 +49,7 @@ d2 = {1 : 10}
 print(d1, d2)
 # d3= {[1, 2, 3] : "리스트 값을 키로"}
 # print(d3) # TypeError: unhashable type: 'list'
+
 
 # dict 데이터 조회
 print(person["name"])

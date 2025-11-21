@@ -259,13 +259,14 @@ print(result)
 
 # print("전역", x)
 
-# 실습 3. 로그인/로그아웃 전역 상채 관리
+# 실습 3. 로그인/로그아웃 전역 상태 관리
 
-current_user = ''
-name = ''
+current_user = '' # current_user = None
+# login_count = 0
 
 def login(name):
     global current_user
+    # global login_count
 
     if current_user:
         print(f"이미 {current_user}(이/가) 로그인되어 있습니다.")
@@ -275,15 +276,31 @@ def login(name):
         
     return current_user
     
+    # if current_user == None:
+        # current_user = name
+        # print(f"{name}님 로그인 성공")
+    # else:
+        # print(f"이미 {current_user}(이/가) 로그인되어 있습니다.")
+        # login_count += 1
+        # if login_count > 4
+            # print("더 이상 로그인 시도를 할 수 없습니다.")
+    
 
 def logout():
     global current_user
+    # global login_count
 
     current_user = '' # 걍 초기화 해버림
 
     print("로그아웃 되었습니다.")
     
     return current_user
+
+    # if current_uesr == None:
+        # print("로그인 상태가 아닙니다.")
+    # else:
+        # print("로그아웃 되었습니다!")
+        # current_user = None
     
 login("동윤2")
 login("빠니보틀")
