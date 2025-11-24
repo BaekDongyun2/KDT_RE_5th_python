@@ -30,14 +30,14 @@
 # 사용자 정의 함수 기본 문법
 # 함수의 정의: define의 약자로 def사용
 
-def 함수이름 (매개변수):
-    # 실행할 코드
-    print(매개변수)
-    return "반환값"
+# def 함수이름 (매개변수):
+#     # 실행할 코드
+#     print(매개변수)
+#     return "반환값"
 
-# 함수의 시행(호출, call)
-result = 함수이름("인자")
-print(result)
+# # 함수의 시행(호출, call)
+# result = 함수이름("인자")
+# print(result)
 
 # 매개변수(parameter): 매개 + 변수
 # + 매개: 둘 사이를 연결해줌
@@ -261,20 +261,20 @@ print(result)
 
 # 실습 3. 로그인/로그아웃 전역 상태 관리
 
-current_user = '' # current_user = None
-# login_count = 0
+# current_user = '' # current_user = None
+# # login_count = 0
 
-def login(name):
-    global current_user
-    # global login_count
+# def login(name):
+#     global current_user
+#     # global login_count
 
-    if current_user:
-        print(f"이미 {current_user}(이/가) 로그인되어 있습니다.")
-    else:
-        current_user += name
-        print(f"{name}님 로그인 성공")
+#     if current_user:
+#         print(f"이미 {current_user}(이/가) 로그인되어 있습니다.")
+#     else:
+#         current_user += name
+#         print(f"{name}님 로그인 성공")
         
-    return current_user
+#     return current_user
     
     # if current_user == None:
         # current_user = name
@@ -286,24 +286,213 @@ def login(name):
             # print("더 이상 로그인 시도를 할 수 없습니다.")
     
 
-def logout():
-    global current_user
-    # global login_count
+# def logout():
+#     global current_user
+#     # global login_count
 
-    current_user = '' # 걍 초기화 해버림
+#     current_user = '' # 걍 초기화 해버림
 
-    print("로그아웃 되었습니다.")
+#     print("로그아웃 되었습니다.")
     
-    return current_user
+#     return current_user
 
     # if current_uesr == None:
         # print("로그인 상태가 아닙니다.")
     # else:
         # print("로그아웃 되었습니다!")
         # current_user = None
+        # login_count = 0
+
+
+# login("동윤2")
+# login("빠니보틀")
+# logout()
+# login("빠니보틀")
+# print(current_user)
+
+# 재귀함수
+# + 함수가 자기자신을 호출하는 함수
+# + 반복문 업이 특정 작업을 반복 수행할 수 있음
+
+# 재귀함수의 작동 원리
+# + 함수가 자기자신을 호출하면서, 문제를 더 작은 문제로 나눔
+# + 기본조건이 충족될 때 까지 재귀 호출을 반복
+# + 기본조건을 만나면 재귀 호출이 종료되고, 함수가 차례로 반환됨
+# + 재귀 호출이 끝나려면 반즈싯 기본조건이 필요함 --> 없으면 무한루프 발생
+
+# 재귀함수의 장점
+# + 코드가 직관적이고 간결함: 재귀함수는 복잡한 문제를 간결하게 표현할 수 있어 코드 가독성이 높아짐.
+# + 문제 해결을 논리적으로 표현 가능: 반복문(for, while)보다 문제의 개념을 더 자연스럽게 코드로 표현 가능
+# + 일부 알고리즘에 적합: 분할 정복, 백트래킹, 트리탐색과 같은 문제에서는 재귀가 매우 유용함.
+# + 데이터 구조 탐색에 용이: 연결 리스트, 그래프, 트리와 같은 재귀적 구조를 가진 데이터 구조 탐색에 적합함.
+
+# 재귀함수의 단점
+# 스택 오버플로우 위험: 너무 깊은 재귀 호출이 발생하면 스택 메모리가 초과되어 프로그램이 종료될 수 있음.
+# 반복문보다 성능이 낮을 수 있음: 함수 호출마다 스택 프레임이 생성되므로, 반복문보다 성능이 떨어질 수 있음.
+# 메모리 사용량 증가: 각 함수 호출마다 메모리가 추가로 필요하므로, 메모리 사용량이 증가할 수 있음.
+# 중복 연산이 발생할 가능성: 피보나치 수열처럼 같은 값을 여러 번 계산하는 경우 불필요한 연산이 많아짐.
+# 디버깅이 어려울 수 있음: 반복문보다 실행 흐름을 추적하기 어려울 수 있음.
+
+
+# 재귀함수
+# 1. 자기 자신을 호출하는 함수
+# 2. 반드시 기본조건(종료조건)이 있어야 함
+# + 큰 문제를 작은 문제로 나누었을 때, 일정한 패턴이 있어야 한다.
+
+# import time
+
+# def recursive_func(n):
+#     # 기본조건
+#     if n == 0:
+#         return
     
-login("동윤2")
-login("빠니보틀")
-logout()
-login("빠니보틀")
-print(current_user)
+#     recursive_func(n-1)
+#     print("재귀 호출", n)
+#     time.sleep(1)
+
+# recursive_func(5)
+
+def power(a, b):
+
+    if b == 0:
+        return 1 # a^0
+    
+    c = 1 # a^0
+
+    for b in range(b): # b번 거듭제곱
+        
+        c = c * a
+
+    return c
+
+    # if b == 0:
+        # return 1
+    # return a * power(a, b - 1)
+    # --> b = 0 이 되는 순간까지 b + 1 번 곱
+
+print(power(2, 4)) # 16
+
+def factorial1(a):
+    if a == 1:
+        return 1 # a! = a * (a-1) * (a-2) * (a-3)* ..... * (a-n) * .....* 3 * 2 * 1
+    
+    b = 1 # factorial를 받을 변수 b에 1을 할당 // 0! = 1
+
+    for a in range(a, 1, -1):
+        
+        b = b * a
+
+    return b
+
+print(factorial1(5)) # 120
+
+def factorial2(a):
+    if a == 1:
+        return 1 # a! = a * (a-1) * (a-2) * (a-3)* ..... * (a-n) * .....* 3 * 2 * 1
+    return a * factorial2(a-1) # a! = a * (a-1)~~~~~
+
+print(factorial2(5)) # 120
+
+def fibonacci1(n):
+    if n <= 0:
+        return 0
+
+    a, b = 1, 1
+
+    for n in range(1, n-1):
+        a, b = b, a+ b
+
+    return b
+
+print(fibonacci1(7)) # 13
+
+def fibonacci2(n):
+    if n <= 0:
+        return 0
+    if n <= 2:
+        return 1
+    return fibonacci2(n-1) + fibonacci2(n-2)
+
+print(fibonacci2(6)) # 8
+# 1 --> 1
+# 2 --> 1
+# 3 --> 2
+# 4 --> 3
+# 5 --> 5
+# 6 --> 8
+# 7 --> 13
+
+# 람다(lambda) 함수
+# 익명 함수
+# 간단한 함수를 한줄로 표현할 때 사용
+
+# 람다 함수의 기본 문법
+# lambda 매개변수: ㅠㅛ현식
+# + 표현식: 값이 반환되는 식
+
+# 일반 함수
+def add(x, y):
+    return x + y
+# 람다 함수
+add_func = lambda x, y: x + y
+
+print(add_func(3, 5)) # 8
+
+# 람다로 값을 반환하고 사용을 끝내는 경우
+print((lambda x: x ** 2)(10)) # 100
+
+# 람다 함수의 활용
+# 1. map에서 활용
+my_list = [1, 2, 3, 4]
+
+# 일반 함수를 사용
+def square_func(x):
+    return x ** 2
+
+# 함수를 인자로 받는 함수
+print(list(map(square_func, my_list))) # [1, 4, 9, 16]
+
+# 람다 함수를 사용
+print(list(map(lambda x: x ** 2, my_list))) # [1, 4, 9, 16]
+
+# 2. filter에서 활용
+my_list2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# 일반 함수 사용
+def is_even(x):
+    return x % 2 == 0
+
+print(list(filter(is_even, my_list2))) # [2, 4, 6, 8, 10]
+
+# 람다 함수를 사용
+print(list(filter(lambda x: (x % 2) == 0, my_list2))) # [2, 4, 6, 8, 10]
+
+# 3. sorted에서 활용
+my_list3 = ["apple", "banana", "watermelon", "grape"]
+print(sorted(my_list3, key = lambda word: len(word))) # ['apple', 'grape', 'banana', 'watermelon']
+
+# 람다 함수 사용 주의사항
+# 1. 문장 사용 금지: return, if, for 문은 사용 불가(표현식만 가능)
+# 2. 디버깅 어려움: 익명이므로 디버깅 시 함수 이름 없음
+# 3. 남용주의: 복잡한 로직은 def로 명시적으로 작성하는 것이 좋음
+
+# 실습 7-1. 특정 조건 만족하는 튜플만 추출
+students = [("Alice", [80, 90]), ("Bob", [60, 65]), ("Charlie", [70, 70])]
+# 리스트 안에 튜플 안에 문자열과 리스트
+# 안의 정수 리스트를 불러와서 계산을 해야됨
+
+print(list(filter(lambda x: sum(x[1]) / len(x[1]) >= 70, students))) # [('Alice', [80, 90]), ('Charlie', [70, 70])]
+# x = 튜플, x[1] = 점수 리스트
+
+# 실습 7-2. 키워드 추출 리스트 만들기
+sentences = ["Python is fun", "Lambda functions are powerful", "Coding is creative"]
+# 규칙이 있다면, 띄어쓰기, 대문자 구분, 문장의 첫 번째 단어?
+
+print(list(map(lambda sentences: sentences.split()[0], sentences))) # ['Python', 'Lambda', 'Coding']
+# map이 아닌 filter를 쓰면 람다함수 조건식에 의해서 모든 문자열들이 true로 판별되니까 모든 문장이 필터를 통과하게 된다.
+# map --> 데이터를 변환(첫 단어만 뽑아내는 등) / filter --> 데이터를 선별(조건에 맞는 원소만 남김)
+
+# 실습 7-3. 튜플 리스트 정렬하기
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+
+print(sorted(people, key = lambda x: x[1])) # [('Bob', 25), ('Alice', 30), ('Charlie', 35)]
