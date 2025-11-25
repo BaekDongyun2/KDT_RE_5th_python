@@ -322,52 +322,252 @@
 # @property 데코레이터
 # - 메서드를 속성처럼 보이게 만들어주는 데코레이터
 
-class Ex:
-    def __init__(self):
-        self.value = 0
+# class Ex:
+#     def __init__(self):
+#         self.value = 0
 
-    # getter
-    @property
-    def value(self):
-        return self.__value
+#     # getter
+#     @property
+#     def value(self):
+#         return self.__value
     
-    # setter
-    @value.setter
-    def value(self, val):
-        if val < 0:
-            print("우효하지 않는 값입니다.")
-        else:
-            self.__value = val
+#     # setter
+#     @value.setter
+#     def value(self, val):
+#         if val < 0:
+#             print("우효하지 않는 값입니다.")
+#         else:
+#             self.__value = val
 
-ex1 = Ex()
-print(ex1.value)
-ex1.value = 100
-print(ex1.value)
-ex1.value = -100
-print(ex1.value)
+# ex1 = Ex()
+# print(ex1.value)
+# ex1.value = 100
+# print(ex1.value)
+# ex1.value = -100
+# print(ex1.value)
 
-class UserAccount:
-    def __init__(self, username, password):
-        # 생성자에서 사용자 이름과 비밀번호 초기화
-        self.username = username
-        self.__password = password
+# # 실습 3-1. UswerAccount 클래스: 비밀번호 보호
 
-    def change_password(self, old_pw, new_pw):
-        if old_pw != self.__password:
-            print("비밀번호 불일치")
-        else:
-            self.__password = new_pw
-            print("비밀번호 변경됨")
+# class UserAccount:
+#     def __init__(self, username, password):
+#         # 생성자에서 사용자 이름과 비밀번호 초기화(0으로 초기화하는 것이 아님;;)
+#         self.username = username
+#         self.__password = password # private으로 선언
 
-    def check_password(self, pw):
-        if self.__password == pw:
-            print(True)
-        else:
-            print(False)
+#     def change_password(self, old_pw, new_pw):
+#         if old_pw != self.__password:
+#             print("비밀번호 불일치")
+#         else:
+#             self.__password = new_pw
+#             print("비밀번호 변경됨")
 
-bank = UserAccount("Dongyun2", 12345678)
-bank.change_password(12345678, 7777) # 비밀번호 7777로 변경
-bank.check_password(775847) # 비밀번호 불일치 유도
-bank.change_password(7777, 6666) # 변경된 비밀번호를 다른 비밀번호(6666)로 다시 변경
-bank.change_password(1235, 77) # 비밀번호 불일치 유도
-bank.check_password(6666) # 변경된 비밀번호 확인
+#     def check_password(self, pw):
+#         if self.__password == pw:
+#             print(True)
+#         else:
+#             print(False)
+
+#     # def check_password(self, password):
+#         # return self.__password == password
+
+# bank = UserAccount("Dongyun2", 12345678) # 계좌 이용자, 비밀번호 입력
+# bank.change_password(12345678, 7777) # 비밀번호 7777로 변경
+# bank.check_password(775847) # 비밀번호 불일치 확인
+# bank.change_password(7777, 6666) # 변경된 비밀번호를 다른 비밀번호(6666)로 다시 변경
+# bank.change_password(1235, 77) # 비밀번호 불일치 유도
+# bank.check_password(6666) # 변경된 비밀번호 확인
+
+# # print(bank.username) # "Dongyun2"
+# # print(user.__password) # 출력안됨
+
+# # 실습 3-2 Student 클래스: 성적검증(@property사용)
+
+# class Student:
+#     def __init__(self, name, __score):
+#         self.name = name
+#         self.__score = __score
+
+#     @property # getter
+#     def score(self):
+#         return self.__score
+    
+#     @score.setter # setter
+#     def score(self, value):
+#         if 0 <= value <= 100:
+#             self.__score = value
+#         else:
+#             raise ValueError("성적은 0에서 100 사이여야 합니다.")
+        
+# s1 = Student("Alice", 85)
+# print(s1.name)
+# print(s1.score) # 85
+
+# # s1.score = 105 # ValueError
+# s1.score = 95
+# print(s1.score) # 95
+
+# 상속의 개념과 필요성
+# 기존에 정의된 클래스의 속성과 메서드를 물려받아 새로운클래스를 만드는 것
+# + 코드의 재사용을 높임
+# + 공통된 기능은 부모 클래스에 정의하고, 자식 클래스에서 확장하거나 수정
+
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스를 만드는 것을 의미함
+
+
+# 상속 기본 문법
+# 부모 클래스
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def bark(self):
+#         print("동물이 울음소리를 냅니다.")
+
+# # 자식 클래스
+# class Dog(Animal):
+#     pass
+
+# dog = Dog("구름이")
+# dog.bark()
+# print(dog.name)
+
+# super()를 사용한 부모 생성자 호출
+# super(): 부모클래스의 메서드나 생성자를 호출할 수 있도록 해주는 내장함수
+# + 자식 클래스에서 부모 클래스의 메서드, 생성자, 속성을 명시적 클래스명 없이 호출할 때 사용
+# + 코드의 유연성과 유지보수성 향상
+
+# super() 사용시 주의사항
+# super()는 반드시 클래스 내부 메서드에서 사용해야함
+# 생성자에서 super().__init__()를 호출하지 않으면 부모 생성자가 생략됨
+# super().__init__()는 Parent.__init__(self)를 직접 호출하는것과 유사하지만, 상속구조가 변경되어도 자동 추적되므로 안전함
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+
+# 자식 클래스
+class Dog(Animal):
+    def __init__(self, name, age, species):
+        # super는 부모를 가리킴
+        super().__init__(name, age)
+        self.species = species
+
+        # 오버라이딩
+    def bark(self):
+        super().bark()
+        print("월월이청청")
+
+dog = Dog("구름이", 17, "포메라니안")
+dog.bark()
+print(dog.name)
+print(dog.age)
+print(dog.species)
+
+# 메서드 오버라이딩
+# 부모 클래스의 메서드를 자식 클래스에서 동일한 이름으로 다시 정의하는 것
+# 기존 기능을 새로운 방식으로 변경하거나 특화된 동작을 구현할 수 있음
+
+class Shape:
+    def __init__(self, sides, base):
+        self.sides = sides
+        self.base = base
+
+    def printinfo(self):
+        print(f"변의 개수: {self.sides}")
+        print(f"밑변의 길이: {self.base}")
+
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+class Rectangle(Shape):
+    def __init__(self, sides, base, height):
+        self.sides = sides
+        self.base = base
+        self.height = height
+
+    # 오버라이딩
+    def area(self):
+
+        print(f"사각형의 넓이: {self.base * self.height}")
+    
+class Triangle(Shape):
+    def __init__(self, sides, base, height):
+        self.sides = sides
+        self.base = base
+        self.height = height
+    
+    # 오버라이딩
+    def area(self):
+        print(f"삼각형의 넓이: {(self.base * self.height) /2}")
+
+# 실행
+
+shape = Shape(20, 7)
+shape.printinfo()
+shape.area()
+
+rect = Rectangle(4, 10, 17)
+rect.printinfo()
+rect.area()
+
+tri = Triangle(3, 15, 13)
+tri.printinfo()
+tri.area()
+
+#  추상 클래스
+# 직접 인스턴스를 만들 수 없으며, 반드시 자식 클래스에서 구현을 완성해야 하는 클래스
+# + 공통적인 구조는 정의하되, 구체적인 동작은 상속받은 클래스에서 구형하도록 강제하는 용도로 사용
+
+# 추상 클래스의 목적
+# + 공통 인터페이스 정의: 모든 하위 클래스가 따라야 할 메서드 구조 정의
+# + 일관성 유지: API나 프레임워크의 통일된 동작 보장
+# + 구현강제: 필수 메서드를 구현하지 않으면 오류 발생
+# + 코드 재사용 + 설계 명확화: 일부 구현을 제공하면서도 확장 기능하도록 설계
+
+# 추상 클래스(Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractmethod # abc에서, ABC, abstractmethod를 가져와라.
+
+class Animal(ABC):
+    
+    # 추상 메서드
+    @abstractmethod
+    def bark(self): # 자식 클래서에서 모조건 구현을 하라고 강제하는거임
+        pass
+
+class Dog(Animal):
+    def bark(self):
+        print("멍멍")
+
+# a = Animal()
+a = Dog()
+a.bark()
+
+# 실습 5. 추상 클래스 Payment 구현
+
+class Payment(ABC):
+
+    # 추상 메서드
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CardPayment(Payment):
+    def pay(self, amount):
+        print(f"카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+money = CardPayment()
+money.pay(10000000000000000000000)
+
+moneyyyy = CashPayment()
+moneyyyy.pay(2398623946912837612984986748498487)
