@@ -54,3 +54,10 @@ print(p1.name)
 #print(p1.__age)
 print(p1.get_age())
 p1.set_age(-10)
+
+with open("with_example.txt", "a", encoding="utf-8") as f1:
+    while True:
+        text = input("저장할 내용을 입력해주세요(종료: z)")
+        if text == "Z" or text == "z":
+            break
+        f1.write(text + "\n")

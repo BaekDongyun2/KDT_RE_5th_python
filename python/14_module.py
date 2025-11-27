@@ -29,7 +29,7 @@
 # import hello as h
 # h.greeting("dingdong")
 
-# # 실습1. 계산기 모듈 만들어보기
+# 실습1. 계산기 모듈 만들어보기
 
 # import my_package.calc as calc
 # calc.add(100, 28)
@@ -46,15 +46,15 @@
 # import my_package.calc as n
 # n.divide(78346, 24)
 
-# # 패키지
-# # 어러 모듈(.py파일)을 폴더 (디렉터리) 단위로 묶은 것
-# # + 대규모 프로젝트, 라이브러리 제작 시 사용
+# 패키지
+# 어러 모듈(.py파일)을 폴더 (디렉터리) 단위로 묶은 것
+# + 대규모 프로젝트, 라이브러리 제작 시 사용
 
-# # 패키지
-# # 모듈의 묶음
-# # 모듈을 폴더 단위로 묶어 놓은 것
+# 패키지
+# 모듈의 묶음
+# 모듈을 폴더 단위로 묶어 놓은 것
 
-# # 패키지에서 모듈 불러오기(1)
+# 패키지에서 모듈 불러오기(1)
 
 # from my_package import calc as c
 # c.add(10, 20)
@@ -63,27 +63,27 @@
 # from my_package.calc import add
 # add(10, 20)
 
-# # 파이썬 표준 라이브러리
-# # math 모듈: 수학적 연산에 사용되는 모듈
+# 파이썬 표준 라이브러리
+# math 모듈: 수학적 연산에 사용되는 모듈
 
 # import math as m
 
 # # 1. 올림/내림
 # # ceil: 올림, 소수점 지정x
-# m.ceil(3.14)
+# print(m.ceil(3.14))
 
 # # floor: 내림, 소수점 지정x
-# m.floor(3.14)
+# print(m.floor(3.14))
 
 # # round: 반올림 - 내장함수
-# round(3.141592, 24)
+# print(round(3.141592, 2))
 
 # # 2. 제곱, 제곱근
 # # pow(x, y): 제곱 - x ^ y
-# m.pow(2, 3)
+# print(m.pow(2, 3))
 
 # # sqrt(x): 제곱근 반환
-# m.sqrt(16)
+# print(m.sqrt(16))
 
 # # 3. 상수
 # # pi: 원주율
@@ -122,45 +122,45 @@
 # random 모듈: 랜덤 값(난수) 생성 시 사용
 import random
 
-# 1. 난수 생성
+# # 1. 난수 생성
 
-# random(): 0이상 1 미만의 float 난수 반환
-print(random.random())
+# # random(): 0이상 1 미만의 float 난수 반환
+# print(random.random())
 
-# uniform(a, b): a 이상 b 이하의 실수 난수 반환
-print(random.uniform(1, 10))
+# # uniform(a, b): a 이상 b 이하의 실수 난수 반환
+# print(random.uniform(1, 10))
 
-# randint(a, b): a이상 b 이하의 정수 난수 반환
-print(random.randint(1, 100))
+# # randint(a, b): a이상 b 이하의 정수 난수 반환
+# print(random.randint(1, 100))
 
-# randrange(Start, stop, step): 범위 안의 정수 난수 반환, 간격 지정 가능
-print(random.randrange(0, 100, 5))
+# # randrange(Start, stop, step): 범위 안의 정수 난수 반환, 간격 지정 가능
+# print(random.randrange(0, 100, 5))
 
-# 2. 랜덤 선택
+# # 2. 랜덤 선택
 
-fruits = ["apple", "banana", "watermelon", "grape", "orange"]
+# fruits = ["apple", "banana", "watermelon", "grape", "orange"]
 
-# choice(seq): 시퀀스에서 임의의 요소 1개 반환
-print(random.choice(fruits))
+# # choice(seq): 시퀀스에서 임의의 요소 1개 반환
+# print(random.choice(fruits))
 
-# choices(seq, k): 시퀀스에서 "중복허용" k개 요소 리스트를 반환
-print(random.choices(fruits, k = 2))
+# # choices(seq, k): 시퀀스에서 "중복허용" k개 요소 리스트를 반환
+# print(random.choices(fruits, k = 2))
 
-# 섞기
-# sample(seq, k): 시퀀스에서 "중복없이" k개 요소 리스트를 반환
-print(random.sample(fruits, k = 2))
+# # 섞기
+# # sample(seq, k): 시퀀스에서 "중복없이" k개 요소 리스트를 반환
+# print(random.sample(fruits, k = 2))
 
-# shuffle(seq): 시퀀스의 요소를 무작위로 섞음 -> 원본 시퀀스를 변경
-numbers = [1, 2, 3, 4, 5]
-print(random.shuffle(numbers))
-print(numbers)
+# # shuffle(seq): 시퀀스의 요소를 무작위로 섞음 -> 원본 시퀀스를 변경
+# numbers = [1, 2, 3, 4, 5]
+# print(random.shuffle(numbers))
+# print(numbers)
 
-# 실습 3. 로도 번호 뽑기
-num = []
-for i in range(6):
-    num.append(random.randint(1, 46))
+# # 실습 3. 로도 번호 뽑기
+# num = []
+# for i in range(6):
+#     num.append(random.randint(1, 46))
 
-print(sorted(random.sample(num, k=6)))
+# print(sorted(random.sample(num, k=6)))
 
 # result = sorted(random.sample(range(1, 46), k=6))
 # print(result)
@@ -244,39 +244,39 @@ print(sorted(random.sample(num, k=6)))
 
 # datetime 모듈
 # 날짜와 시간의 생성, 조작, 현실 변환과 같은 시간 관련 기능을 제공
-import datetime
+# import datetime
 
-# 1. 날짜/시간 구하기
-# 현재 날짜와 시간 구하기
-now = datetime.datetime.now()
-print(now)
-
-
-# 오늘 날짜만 구하기
-today = datetime.date.today()
-print(today)
+# # 1. 날짜/시간 구하기
+# # 현재 날짜와 시간 구하기
+# now = datetime.datetime.now()
+# print(now)
 
 
-# 2. 날짜/시간 형식 변환
-formatted = now.strftime("%Y/%m/%d %H:%M:%S")
-print(formatted)
+# # 오늘 날짜만 구하기
+# today = datetime.date.today()
+# print(today)
 
-parsed = datetime.datetime.strptime(formatted, "%Y/%m/%d %H:%M:%S")
-print(parsed)
 
-# 3. 날짜/시간 연산
-dt = datetime.date(2025, 7, 7)
-passed_time = today - dt
-print(f"{passed_time}일이 지났습니다.")
+# # 2. 날짜/시간 형식 변환
+# formatted = now.strftime("%Y/%m/%d %H:%M:%S")
+# print(formatted)
 
-# 4. 요일반환: weekday
-# 0: 월요일 ~ 7: 일요일
-days = ["월", "화", "수", "목", "금", "토", "일"]
-day_num = today.weekday()
-print(days[day_num])
+# parsed = datetime.datetime.strptime(formatted, "%Y/%m/%d %H:%M:%S")
+# print(parsed)
 
-# datetime 또는 date 객체에는 년/월/일 시간 등이 속성으로 들어있음
-print(datetime.datetime.now().year)
+# # 3. 날짜/시간 연산
+# dt = datetime.date(2025, 7, 7)
+# passed_time = today - dt
+# print(f"{passed_time}일이 지났습니다.")
+
+# # 4. 요일반환: weekday
+# # 0: 월요일 ~ 7: 일요일
+# days = ["월", "화", "수", "목", "금", "토", "일"]
+# day_num = today.weekday()
+# print(days[day_num])
+
+# # datetime 또는 date 객체에는 년/월/일 시간 등이 속성으로 들어있음
+# print(datetime.datetime.now().year)
 
 # 실습 5. 다음 생일까지 남은 날짜 계산하기
 # bd = input("생일(MM-DD)을 입력하세요: ")
@@ -325,85 +325,85 @@ print(datetime.datetime.now().year)
 # 시간의 측정, 지연, 변환과 같은 시간 관련 기능을 제공
 # + 주요기능: 현재 시간, 대기(sleep), 시간측정
 
-# import time
+import time
 
 # # 1. 시간 반환
 # # time()
 # # Unix 타임스탬프로 반환 (1970.1.1부터 경과 초)
 # print(time.time())
 
-# # ctime(): 현재 시간을 문자열로 반환
-# print(time.ctime())
-# print(time.ctime(0)) # 기준시로 반환 (1970.1.1)
+# ctime(): 현재 시간을 문자열로 반환
+print(time.ctime())
+print(time.ctime(0)) # 기준시로 반환 (1970.1.1)
 
-# # strftime(): 원하는 포맷의 문자열로 시간 객체 변환
-# lt = time.localtime()
-# formatted = time.strftime("%Y-%m-%d %H:%M:%S", lt)
-# print(formatted)
+# strftime(): 원하는 포맷의 문자열로 시간 객체 변환
+lt = time.localtime()
+formatted = time.strftime("%Y-%m-%d %H:%M:%S", lt)
+print(formatted)
 
-# # strptime(): 문자열을 struct_time 객체로 변환
-# parsed = time.strptime(formatted, "%Y-%m-%d %H:%M:%S")
-# print(parsed)
+# strptime(): 문자열을 struct_time 객체로 변환
+parsed = time.strptime(formatted, "%Y-%m-%d %H:%M:%S")
+print(parsed)
 
-# # 2. 시간 지연
-# # sleep(seconds) = 지정한 초만큼 프로그램이 일시 정지
-# time.sleep(1)
-# print("time sleep")
+# 2. 시간 지연
+# sleep(seconds) = 지정한 초만큼 프로그램이 일시 정지
+time.sleep(1)
+print("time sleep")
 
-# # 시간 측정하기
-# start = time.time()
+# 시간 측정하기
+start = time.time()
 
-# for i in range(5):
-#     print(i)
-#     time.sleep(1)
+for i in range(5):
+    print(i)
+    time.sleep(1)
 
-# end = time.time()
-# print(f"수행시간 : {end - start: .2f}초")
+end = time.time()
+print(f"수행시간 : {end - start: .2f}초")
 
-# # 실습 6. 타자 연습 게임 만들기
-# words = [
-#     "apple", "banana", "orange", "grape", "lemon",
-#     "peach", "melon", "cherry", "plum", "pear",
-#     "school", "friend", "family", "flower", "garden",
-#     "window", "bottle", "pencil", "summer", "winter",
-#     "happy", "future", "travel", "animal", "market",
-#     "doctor", "planet", "energy", "nature", "memory"
-# ]
-# word_correct_count = 0
-# word_idx = 0
-# question_num = 0
+# 실습 6. 타자 연습 게임 만들기
+words = [
+    "apple", "banana", "orange", "grape", "lemon",
+    "peach", "melon", "cherry", "plum", "pear",
+    "school", "friend", "family", "flower", "garden",
+    "window", "bottle", "pencil", "summer", "winter",
+    "happy", "future", "travel", "animal", "market",
+    "doctor", "planet", "energy", "nature", "memory"
+]
+word_correct_count = 0
+word_idx = 0
+question_num = 0
 
-# input("시작하려면 엔터를 누르세요.")
-# print("시작!")
+input("시작하려면 엔터를 누르세요.")
+print("시작!")
 
-# start = time.time()
-# time.strftime("%H:%M:%S", time.localtime(start))
+start = time.time()
+time.strftime("%H:%M:%S", time.localtime(start))
 
-# while word_correct_count < 2:
+while word_correct_count < 2:
 
-#     new_word = random.choice(words)
-#     word_idx += 1
-#     trial += 1
+    new_word = random.choice(words)
+    word_idx += 1
+    trial += 1
 
-#     print(f"{word_idx}. {new_word}")
+    print(f"{word_idx}. {new_word}")
 
-#     while True:
-#         user_input = input()
-#         if new_word == user_input:
-#             print("통과!")
-#             word_correct_count += 1
-#             break # 맞추면 빠져나와서 다음 단어로 진행
-#         else:
-#             print("오타! 다시 도전!")
+    while True:
+        user_input = input()
+        if new_word == user_input:
+            print("통과!")
+            word_correct_count += 1
+            break # 맞추면 빠져나와서 다음 단어로 진행
+        else:
+            print("오타! 다시 도전!")
 
-# end = time.time()
-# time.strftime("%H:%M:%S", time.localtime(end))
-# print(f"시작시간 : {start: .2f} / 종료시간 : {end: .2f} / 소요시간 : {end - start: .2f}초")
-# print(f"총 시도 수: {trial} / 맞춘 문제 수: {word_correct_count}")
+end = time.time()
+time.strftime("%H:%M:%S", time.localtime(end))
+print(f"시작시간 : {start: .2f} / 종료시간 : {end: .2f} / 소요시간 : {end - start: .2f}초")
+print(f"총 시도 수: {trial} / 맞춘 문제 수: {word_correct_count}")
 
 
 # sys 모듈
-# 파이썬 인터프리터와 관련된 다양한 기능 제고
+#파이썬 인터프리터와 관련된 다양한 기능 제고
 
 import sys
 
