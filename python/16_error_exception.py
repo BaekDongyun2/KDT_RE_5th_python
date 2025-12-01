@@ -174,3 +174,4 @@ while True:
         print("0으로 나눌 수 없습니다. 다시 입력하세요.\n")
     except Exception:
         print("알 수 없는 오류가 발생했습니다.\n")
+        
