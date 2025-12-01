@@ -39,61 +39,61 @@ while문
 
 # 예시
 # 변수 i를 1로 초기화
-# i = 1
+i = 1
 
-# # i가 5이하일 동안 반복
-# while i <= 5:
-#     print(i) # i출력
-#     i = i + 1 # i에 1을 더해서 갱신
-#     print(i)실행 후 i 값을 증가시키지 않으면 무한 루프에 빠질 수 있음
+# i가 5이하일 동안 반복
+while i <= 5:
+    print(i) # i출력
+    i = i + 1 # i에 1을 더해서 갱신
+    print(i) # 실행 후 i 값을 증가시키지 않으면 무한 루프에 빠질 수 있음
 
-# # 예제 1
-# light = "green"
-# while light == "green" :
-#     print("계속 가세요")
-#     light = input("신호등의 신호를 입력하세요(green/red/yellow): ")
-# print("중지")
+# 예제 1
+light = "green"
+while light == "green" :
+    print("계속 가세요")
+    light = input("신호등의 신호를 입력하세요(green/red/yellow): ")
+print("중지")
 
 # # 예제 2
-# i = 0
+i = 0
 
-# while i < 5:
-#     print(i, "반복")
-#     i += 1
-# print("반복 종료")
+while i < 5:
+    print(i, "반복")
+    i += 1
+print("반복 종료")
 
 # 실습 1-1
 
-# secret_code = Dongyun2
+secret_code = Dongyun2
 
-# while secret_code != "Dongyun2":
+while secret_code != "Dongyun2":
 
-#     print("다시 입력해.")
-#     secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
+    print("다시 입력해.")
+    secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
 
-# print("성공!")
+print("성공!")
 
 # # 실습 1-2
-# import random
+import random
 
-# print("1~100 사이의 무작위 수를 생성 중입니다.")
+print("1~100 사이의 무작위 수를 생성 중입니다.")
 
-# num = int
-# answer = random.randint(1, 100)
-# iteration = 0
+num = int
+answer = random.randint(1, 100)
+iteration = 0
 
-# while num != answer:
-#     num = int(input("숫자를 입력하시오. : "))
-#     iteration += 1
+while num != answer:
+    num = int(input("숫자를 입력하시오. : "))
+    iteration += 1
 
-#     if num > answer:
-#         print(f"{num} 보다는 작아")
-#     elif num < answer:
-#         print(f"{num} 보다는 커")
-#     else:
-#         print(f"정답! {answer} 입니다!!` ")
+    if num > answer:
+        print(f"{num} 보다는 작아")
+    elif num < answer:
+        print(f"{num} 보다는 커")
+    else:
+        print(f"정답! {answer} 입니다!!` ")
 
-# print(f"총 {iteration}번 만에 정답을 맞췄어.")
+print(f"총 {iteration}번 만에 정답을 맞췄어.")
 
 # # 루프 제어문
 # running = True
@@ -105,122 +105,119 @@ while문
 #         running = False
 
 # # 예제 1
-# i = 0
+i = 0
 
-# while True:
-#     print(i, "실행")
-#     my_select = input("메뉴를 골라주세요: ")
+while True:
+    print(i, "실행")
+    my_select = input("메뉴를 골라주세요: ")
 
-#     if my_select == "종료":
-#         break
+    if my_select == "종료":
+        break
 
-#     i += 1
-# print("반복문 종료")
+    i += 1
+print("반복문 종료")
 
-# # continue
+# continue
 
-# i = 0
-# while i < 5:
-#     i += 1
-#     if i % 2 == 0:
-#         continue
-#     print(i)
-# print("반복종료")
+i = 0
+while i < 5:
+    i += 1
+    if i % 2 == 0:
+        continue
+    print(i)
+print("반복종료")
 
 # 실습 2-1
 
-# secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
+secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
 
-# while secret_code != "Dongyun2":
+while secret_code != "Dongyun2":
 
-#     print("다시 입력해.")
-#     secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
+    print("다시 입력해.")
+    secret_code = input("비밀 코드를 입력하세여(ex/ 열려라 참깨) :")
 
-#     if secret_code == "Dongyun2":
-#         print("입장완료요~")
-#         break
+    if secret_code == "Dongyun2":
+        print("입장완료요~")
+        break
 
 
-# # 실습 2-2
+# 실습 2-2
 
-# times = 0 
-# sum_age = 0
+times = 0 
+sum_age = 0
 
-# age = 0
+age = 0
 
-# while times < 5:
+while times < 5:
    
-#     age = int(input("나이를 입력하세요: "))
+    age = int(input("나이를 입력하세요: "))
 
     
-#     if (age <= 0 or age > 120):
-#         print("잘못된 입력입니다. 다시 입력하세여.")
-#         continue
+    if (age <= 0 or age > 120):
+        print("잘못된 입력입니다. 다시 입력하세여.")
+        continue
 
-#     sum_age += age
-#     times += 1
+    sum_age += age
+    times += 1
     
-#     print(f"입력횟수: {times}")
-#     average_age = sum_age / times
+    print(f"입력횟수: {times}")
+    average_age = sum_age / times
 
-#     if times >= 5:
-#         break
-# print(sum_age, average_age)
+    if times >= 5:
+        break
+print(sum_age, average_age)
 
     
 # 중첩 while문
 # 예제
-# dan =2 
-# while dan <= 9:
-#     num = 1
-#     print(f"{dan}단")
+dan =2 
+while dan <= 9:
+    num = 1
+    print(f"{dan}단")
     
-#     while num <=9:
-#         num += 1
-#         if num % 2 == 0:
-#             continue
-#         else:
-#             print(f"{dan} X {num} = {dan * num}")
+    while num <=9:
+        num += 1
+        if num % 2 == 0:
+            continue
+        else:
+            print(f"{dan} X {num} = {dan * num}")
         
-
-#     print()
-#     dan += 1
+    print()
+    dan += 1
 
 # 실습 3
 
+ID = input("고갱님의 ID를 입력하세요. : ")
 
+while ID != "Dongyun2":
 
-# ID = input("고갱님의 ID를 입력하세요. : ")
+    print("ㅠㅠ틀렸어요. 다시 입력하세요.")
+    ID = input("고갱님의 ID를 입력하세요. : ")
 
-# while ID != "Dongyun2":
-
-#     print("ㅠㅠ틀렸어요. 다시 입력하세요.")
-#     ID = input("고갱님의 ID를 입력하세요. : ")
-
-#     while ID == "Dongyun2":
+    while ID == "Dongyun2":
         
-#         PW = input("고갱님의 PW를 입력하세요. : ")
+        PW = input("고갱님의 PW를 입력하세요. : ")
         
-#         while PW != "yeahyeah":
-#              print("ㅠㅠ틀렸어요. 다시 입력하세요.")
-#              PW = input("고갱님의 PW를 입력하세요. : ")
+        while PW != "yeahyeah":
+             print("ㅠㅠ틀렸어요. 다시 입력하세요.")
+             PW = input("고갱님의 PW를 입력하세요. : ")
     
-#         print("로그인 성공~")
-#         break
+        print("로그인 성공~")
+        break
 
 # 분리된 while로.
-# while True:
-#     user_id = input("고갱님의 ID를 입력하세요. : ")
-#     if user_id == ID:
-#         break
-#     print("ㅠㅠ틀렸어요. 다시 입력하세요.")
+while True:
+    user_id = input("고갱님의 ID를 입력하세요. : ")
+    if user_id == ID:
+        break
+    print("ㅠㅠ틀렸어요. 다시 입력하세요.")
 
-# while True:
-#     user_pw = input("고갱님의 PW를 입력하세요. : ")
-#     if user_pw == PW:
-#         print("로그인 성공~")
-#         break
-#     print("ㅠㅠ틀렸어요. 다시 입력하세요.")
+while True:
+    user_pw = input("고갱님의 PW를 입력하세요. : ")
+    if user_pw == PW:
+        print("로그인 성공~")
+        break
+    print("ㅠㅠ틀렸어요. 다시 입력하세요.")
 
 # 실습 3 추가 문제
 while True:
