@@ -47,20 +47,22 @@
 #     else:
 #         print("다시 입력하세요.")
 
-def solution(a, b):
-    if not (1  <= a < 10000) and (1 <= b < 10000) :
-        return None
+# def solution(a, b):
+#     if not (1  <= a < 10000) and (1 <= b < 10000) :
+#         return None
        
-    x = int(str(a) + str(b))
+#     x = int(str(a) + str(b))
     
-    if x > (2 * a * b):
-        return (x)
-    else:
-        return (2 * a * b)
-    
-
-print(solution(91, 2))
-print(solution(2, 91))
+#     if x > (2 * a * b):
+#         return (x)
+#     else:
+#         return (2 * a * b)
     
 
+# print(solution(91, 2))
+# print(solution(2, 91))
+    
 
+s = "AB"
+ASCII_code = ord(s.split(""))
+print(ASCII_code)
