@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <!-- 문서 정보 --> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 제목 -->
+    <title>Document</title>
+    <!-- style 정보 -->
+    <style></style>
+    <!-- link: 외부 리소스와의 연결 정의 -->
+    <link rel="stylesheet" href="">
+    <!-- script: javascript 정의 -->
+     <script></script>
+</head>
+<body>
+    <h1>안녕하세요 </h1>
+    <h2>안녕해</h2>
+    <h3>1</h3>
+    <h4>2</h4>
+    <h5>3</h5>
+    <h6>4</h6>
+    <!-- 본문 태그 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eligendi, nemo blanditiis quos deleniti reiciendis esse, neque porro quisquam ex possimus fugiat consectetur. Eum laboriosam blanditiis explicabo sequi molestias velit.</p>
+    <!-- 줄바꿈 -->
+    <span>인라인</span>
+    <br>
+    <span>인라인</span>
+    <br>
+    <!-- 수평 줄 -->
+    <hr />
+    <!-- 순서 없는 목록, type 마커 모양: circle, square, none -->
+    <ul type = "square">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+    <!-- 순서 있는 목록 -->
+    <!-- type: 1, 2, 3, ..., A, a, I, i.... -->
+    <ol type="i" start="3" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <a href="/">인라인 요소 </a>
+
+    <span><b>두껍게</b></span>
+    <span><strong>strong</strong></span>
+    <br>
+    <!-- img 태그-->
+    <img src="https://tse4.mm.bing.net/th/id/OIP.Z7kixshjw9Lro0YIfAhzOQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+    <!-- 상대 경로 -->
+    <img src="./bananacat.jpg" alt="'bananacat" width="400">
+    <!-- 절대 경로(pc) -->
+    <img src="C:\Users\bdy00\Desktop\KD_RE_5th_python\Web\01_html\bananacat.jpg" alt="'bananacat" width="400">
+    <!-- 절대 경로(라이브 서버) -->
+    <img src="\Web/01_html/bananacat.jpg" alt="'bananacat" width="400">
+    
+    <!-- a 태그: 링크 연결 -->
+    <a href="/">인라인 요소</a>
+    <br />
+    <a href="https://www.naver.com" target="_blank">
+        <img src="\Web/01_html/bananacat.jpg" alt="'bananacat" width="400">
+    </a>
+    <hr>
+    <!-- form, input 태그 -->
+    <form>
+        <input type="button" value="버튼">
+        <input type="text">
+        <input type="password" name="" id="">
+        <input type="checkbox" name="fruits" value="apple" checked> 사과
+        <input type="checkbox" name="fruits" value="banana"> 바나나
+        <br>
+        <input type="radio" name="gender" value="man"> 남자
+        <input type="radio" name="gender" value="woman"> 여자
+        <input type="date" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <br>
+        <select name="drink" id="">
+            <optgroup label="coffee">
+            <option value="americano">아메리카노</option>
+            <option value="cafe-latte">카페라떼</option>
+            <option value="espresso">에스프레소</option>
+            </optgroup>
+            <optgroup label="juice">
+            <option value="orange" selected>오렌지 주스</option>
+            <option value="kiwi">키위 주스</option>
+            </optgroup>
+        </select>
+    </form>
+    <br>
+    <!-- table 태그 -->
+    <table border="1" cellspacing="0" cellpadding="5" width="300">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td rowspan="2">홍길동</td>
+            <td>20</td>
+            <td>010-1234-5678</td>
+        </tr>
+        <tr>
+
+            <td>20</td>
+            <td>010-1234-5678</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>010-1234-5678</td>
+        </tr>
+    </table>
+
+</body>
+</html>
