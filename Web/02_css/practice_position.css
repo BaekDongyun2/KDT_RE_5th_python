@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+div {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    text-align: center;
+    align-content: center;
+}
+
+.position-absolute {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item1 {
+    background-color: red;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.item2 {
+    background-color: yellow;
+    position: relative;
+    right: 30px;
+    bottom: 100px;
+}
+
+.item3 {
+    background-color: orange;
+    position: relative;
+    right: 30px;
+    bottom: 100px;
+}
+
+.viewport-box {
+    width: 70vw;
+    background-color: green;
+}

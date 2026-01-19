@@ -1,0 +1,19 @@
+/* 전체 선택자 */
+* {
+    color: white
+}
+
+/* 태그 선택자: 태그 이름 */
+span {
+    background-color: red
+}
+
+/* 아이디 선택자: #아이디 이름 */
+#first {
+    background-color: blue;
+}
+
+/* 클래스 선택자: .클래스 이름 */
+.second {
+    background-color: green;
+}
